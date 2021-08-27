@@ -1,3 +1,7 @@
+## User Authentication(Devise) 
+### Set-up using Dakota L. Martinez's Tutorial
+github.com/dakotalmartinez/rails-devise-jwt-tutorial
+
 # README
 
 This README would normally document whatever steps are necessary to get the
