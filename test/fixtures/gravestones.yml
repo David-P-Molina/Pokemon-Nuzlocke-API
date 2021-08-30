@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trainer: one
+  level: 1
+  death: MyString
+  teammate: one
+  notes: MyString
+  nuzlocke: one
+
+two:
+  trainer: two
+  level: 1
+  death: MyString
+  teammate: two
+  notes: MyString
+  nuzlocke: two
