@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rules
   resources :nuzlockes
   resources :graveyards
   resources :gravestones
