@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pokemons
   resources :types
   get '/current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
