@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  trainer_id_number: 1
+  gym_badge: 1
+  region: MyString
+  pokemon_seen: 1
+  pokemon_caught: 1
+
+two:
+  name: MyString
+  trainer_id_number: 1
+  gym_badge: 1
+  region: MyString
+  pokemon_seen: 1
+  pokemon_caught: 1
