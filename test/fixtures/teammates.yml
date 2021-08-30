@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trainer: one
+  nickname: MyString
+  pokemon: one
+  alive: false
+  notes: MyText
+  location_caught: MyString
+
+two:
+  trainer: two
+  nickname: MyString
+  pokemon: two
+  alive: false
+  notes: MyText
+  location_caught: MyString
