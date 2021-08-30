@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :graveyards
   resources :gravestones
   resources :teammates
   resources :trainers
