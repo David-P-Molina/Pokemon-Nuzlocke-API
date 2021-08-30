@@ -1,0 +1,2 @@
+class Nuzlocke < ApplicationRecord
+end
