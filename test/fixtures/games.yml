@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  release_date: MyString
+  generation: one
+  description: MyString
+
+two:
+  name: MyString
+  release_date: MyString
+  generation: two
+  description: MyString
