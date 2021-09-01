@@ -6,7 +6,6 @@ class CreateGravestones < ActiveRecord::Migration[6.1]
       t.string :death
       t.references :teammate, null: false, foreign_key: true
       t.string :notes
-      t.references :nuzlocke, null: false, foreign_key: true
 
       t.timestamps
     end

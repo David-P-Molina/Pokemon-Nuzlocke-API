@@ -1,2 +1,3 @@
-class Type < ApplicationRecord
+class Type < ApplicationRecord\
+    belongs_to :pokemon
 end

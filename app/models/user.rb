@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-  has_many :nuzlockes
   has_many :games
+  has_many :nuzlockes, through: :games
+  has_many :trainers, through: :games
+  has_one :graveyard
+
   def jwt_payload
     super.merge('foo' => 'bar')
   end
