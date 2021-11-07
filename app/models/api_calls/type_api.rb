@@ -25,6 +25,7 @@ class API
             type_info = self.fetch_type(url)
             type_damage = type_info['damage_relations']
             p type_damage
+            # for each type_damage retrieve name and push to string and set to value for Type.find_or_create
         end
     end
 end
