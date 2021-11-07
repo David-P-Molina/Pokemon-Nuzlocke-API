@@ -1,3 +1,3 @@
-class Type < ApplicationRecord\
+class Type < ApplicationRecord
     has_many :pokemon
 end
