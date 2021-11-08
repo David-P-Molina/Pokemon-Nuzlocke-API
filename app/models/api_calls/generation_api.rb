@@ -28,7 +28,7 @@ class GenerationAPI
             url = gen['url']
             gen_info = self.fetch_generation(url)
             name = gen_info['main_region']['name']
-            puts "#{name} = Generation.find_or_create_by(name: #{name}, release_date: '')"
+            puts "#{name} = Generation.find_or_create_by(name: '#{name.capitalize}', release_date: '')"
         end
     end
     #generation name #pokemon_species name, url #version_groups, names of games
