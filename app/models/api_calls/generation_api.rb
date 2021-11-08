@@ -1,7 +1,8 @@
 require 'httparty'
 require 'dotenv'
 Dotenv.load
-class API
+
+class GenerationAPI
     include HTTParty
     def self.fetch_generations
         url = "https://pokeapi.co/api/v2/generation" 
@@ -17,4 +18,4 @@ class API
     end
 
 end
-API.parse_generations
+GenerationAPI.parse_generations

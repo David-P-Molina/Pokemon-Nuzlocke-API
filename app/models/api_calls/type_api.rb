@@ -1,7 +1,8 @@
 require 'httparty'
 require 'dotenv'
 Dotenv.load
-class API
+
+class TypeAPI
     include HTTParty
     def self.fetch_types
         url = "https://pokeapi.co/api/v2/type?limit=18" 
@@ -29,4 +30,4 @@ class API
         end
     end
 end
-API.retrieve_types_info
+TypeAPI.retrieve_types_info
