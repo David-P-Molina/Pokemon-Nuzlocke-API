@@ -1,7 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Generations
+kanto = Generation.find_or_create_by(name: 'Kanto', release_date: '')
+johto = Generation.find_or_create_by(name: 'Johto', release_date: '')
+hoenn = Generation.find_or_create_by(name: 'Hoenn', release_date: '')
+sinnoh = Generation.find_or_create_by(name: 'Sinnoh', release_date: '')
+unova = Generation.find_or_create_by(name: 'Unova', release_date: '')
+kalos = Generation.find_or_create_by(name: 'Kalos', release_date: '')
+alola = Generation.find_or_create_by(name: 'Alola', release_date: '')
+galar = Generation.find_or_create_by(name: 'Galar', release_date: '')
+
+# Types
+normal = Type.find_or_create_by(name: 'Normal',double_damage_from: 'Fighting', double_damage_to: '', half_damage_from: '', half_damage_to: 'Rock, Steel', no_damage_from: 'Ghost', no_damage_to: 'Ghost')
+fighting = Type.find_or_create_by(name: 'Fighting',double_damage_from: 'Flying, Psychic, Fairy', double_damage_to: 'Normal, Rock, Steel, Ice, Dark', half_damage_from: 'Rock, Bug, Dark', half_damage_to: 'Flying, Poison, Bug, Psychic, Fairy', no_damage_from: '', no_damage_to: 'Ghost')
+flying = Type.find_or_create_by(name: 'Flying',double_damage_from: 'Rock, Electric, Ice', double_damage_to: 'Fighting, Bug, Grass', half_damage_from: 'Fighting, Bug, Grass', half_damage_to: 'Rock, Steel, Electric', no_damage_from: 'Ground', no_damage_to: '')
+poison = Type.find_or_create_by(name: 'Poison',double_damage_from: 'Ground, Psychic', double_damage_to: 'Grass, Fairy', half_damage_from: 'Fighting, Poison, Bug, Grass, Fairy', half_damage_to: 'Poison, Ground, Rock, Ghost', no_damage_from: '', no_damage_to: 'Steel')
+ground = Type.find_or_create_by(name: 'Ground',double_damage_from: 'Water, Grass, Ice', double_damage_to: 'Poison, Rock, Steel, Fire, Electric', half_damage_from: 'Poison, Rock', half_damage_to: 'Bug, Grass', no_damage_from: 'Electric', no_damage_to: 'Flying')
+rock = Type.find_or_create_by(name: 'Rock',double_damage_from: 'Fighting, Ground, Steel, Water, Grass', double_damage_to: 'Flying, Bug, Fire, Ice', half_damage_from: 'Normal, Flying, Poison, Fire', half_damage_to: 'Fighting, Ground, Steel', no_damage_from: '', no_damage_to: '')
+bug = Type.find_or_create_by(name: 'Bug',double_damage_from: 'Flying, Rock, Fire', double_damage_to: 'Grass, Psychic, Dark', half_damage_from: 'Fighting, Ground, Grass', half_damage_to: 'Fighting, Flying, Poison, Ghost, Steel, Fire, Fairy', no_damage_from: '', no_damage_to: '')
+ghost = Type.find_or_create_by(name: 'Ghost',double_damage_from: 'Ghost, Dark', double_damage_to: 'Ghost, Psychic', half_damage_from: 'Poison, Bug', half_damage_to: 'Dark', no_damage_from: 'Normal, Fighting', no_damage_to: 'Normal')
+steel = Type.find_or_create_by(name: 'Steel',double_damage_from: 'Fighting, Ground, Fire', double_damage_to: 'Rock, Ice, Fairy', half_damage_from: 'Normal, Flying, Rock, Bug, Steel, Grass, Psychic, Ice, Dragon, Fairy', half_damage_to: 'Steel, Fire, Water, Electric', no_damage_from: 'Poison', no_damage_to: '')
+fire = Type.find_or_create_by(name: 'Fire',double_damage_from: 'Ground, Rock, Water', double_damage_to: 'Bug, Steel, Grass, Ice', half_damage_from: 'Bug, Steel, Fire, Grass, Ice, Fairy', half_damage_to: 'Rock, Fire, Water, Dragon', no_damage_from: '', no_damage_to: '')
+water = Type.find_or_create_by(name: 'Water',double_damage_from: 'Grass, Electric', double_damage_to: 'Ground, Rock, Fire', half_damage_from: 'Steel, Fire, Water, Ice', half_damage_to: 'Water, Grass, Dragon', no_damage_from: '', no_damage_to: '')
+grass = Type.find_or_create_by(name: 'Grass',double_damage_from: 'Flying, Poison, Bug, Fire, Ice', double_damage_to: 'Ground, Rock, Water', half_damage_from: 'Ground, Water, Grass, Electric', half_damage_to: 'Flying, Poison, Bug, Steel, Fire, Grass, Dragon', no_damage_from: '', no_damage_to: '')
+electric = Type.find_or_create_by(name: 'Electric',double_damage_from: 'Ground', double_damage_to: 'Flying, Water', half_damage_from: 'Flying, Steel, Electric', half_damage_to: 'Grass, Electric, Dragon', no_damage_from: '', no_damage_to: 'Ground')
+psychic = Type.find_or_create_by(name: 'Psychic',double_damage_from: 'Bug, Ghost, Dark', double_damage_to: 'Fighting, Poison', half_damage_from: 'Fighting, Psychic', half_damage_to: 'Steel, Psychic', no_damage_from: '', no_damage_to: 'Dark')
+ice = Type.find_or_create_by(name: 'Ice',double_damage_from: 'Fighting, Rock, Steel, Fire', double_damage_to: 'Flying, Ground, Grass, Dragon', half_damage_from: 'Ice', half_damage_to: 'Steel, Fire, Water, Ice', no_damage_from: '', no_damage_to: '')
+dragon = Type.find_or_create_by(name: 'Dragon',double_damage_from: 'Ice, Dragon, Fairy', double_damage_to: 'Dragon', half_damage_from: 'Fire, Water, Grass, Electric', half_damage_to: 'Steel', no_damage_from: '', no_damage_to: 'Fairy')
+dark = Type.find_or_create_by(name: 'Dark',double_damage_from: 'Fighting, Bug, Fairy', double_damage_to: 'Ghost, Psychic', half_damage_from: 'Ghost, Dark', half_damage_to: 'Fighting, Dark, Fairy', no_damage_from: 'Psychic', no_damage_to: '')
+fairy = Type.find_or_create_by(name: 'Fairy',double_damage_from: 'Poison, Steel', double_damage_to: 'Fighting, Dragon, Dark', half_damage_from: 'Fighting, Bug, Dark', half_damage_to: 'Poison, Steel, Fire', no_damage_from: 'Dragon', no_damage_to: '')

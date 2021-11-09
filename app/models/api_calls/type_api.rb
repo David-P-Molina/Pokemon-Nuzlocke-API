@@ -23,9 +23,9 @@ class TypeAPI
     def self.process_damage_info(array)
         container = []
         array.each do |item|
-            byebug
-            container.push(item['name'])
+            container.push(item['name'].capitalize)
         end
+        container.join(", ")
     end
     def self.retrieve_types_info
         self.parse_types.each do |type|
@@ -33,13 +33,13 @@ class TypeAPI
             url = type['url']
             type_info = self.fetch_type(url)
             type_damage = type_info['damage_relations']
-            double_damage_from = type_damage['double_damage_from'].empty? ? 'true' : ''
-            double_damage_to = type_damage['double_damage_to'].empty? ? self.process_damage_info(type_damage['double_damage_to']) : ''
-            half_damage_from = type_damage['half_damage_from'].empty? ? self.process_damage_info(type_damage['half_damage_from']) : ''
-            half_damage_to = type_damage['half_damage_to'].empty? ? self.process_damage_info(type_damage['half_damage_to']) : ''
-            
-            puts "#{name} = Type.find_or_create_by(name: '#{name.capitalize}',double_damage_from: #{double_damage_from}, double_damage_to: #{double_damage_to}, half_damage_from: , half_damage_to: , no_damage_from: , no_damage_to: )"
-            # for each type_damage retrieve name and push to string and set to value for Type.find_or_create
+            type_damage['double_damage_from'].empty? ? double_damage_from = '' : double_damage_from = self.process_damage_info(type_damage['double_damage_from'])
+            type_damage['double_damage_to'].empty? ? double_damage_to = '' : double_damage_to = self.process_damage_info(type_damage['double_damage_to'])
+            type_damage['half_damage_from'].empty? ? half_damage_from = '' : half_damage_from = self.process_damage_info(type_damage['half_damage_from'])
+            type_damage['half_damage_to'].empty? ? half_damage_to = '' : half_damage_to = self.process_damage_info(type_damage['half_damage_to'])
+            type_damage['no_damage_from'].empty? ? no_damage_from = '' : no_damage_from = self.process_damage_info(type_damage['no_damage_from'])
+            type_damage['no_damage_to'].empty? ? no_damage_to = '' : no_damage_to = self.process_damage_info(type_damage['no_damage_to'])    
+            puts "#{name} = Type.find_or_create_by(name: '#{name.capitalize}',double_damage_from: '#{double_damage_from}', double_damage_to: '#{double_damage_to}', half_damage_from: '#{half_damage_from}', half_damage_to: '#{half_damage_to}', no_damage_from: '#{no_damage_from}', no_damage_to: '#{no_damage_to}')"
         end
     end
 
