@@ -1,3 +1,3 @@
 class Type < ApplicationRecord
-    has_many :pokemon
+    has_and_belongs_to_many :pokemon
 end
