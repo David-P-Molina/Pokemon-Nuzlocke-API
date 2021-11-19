@@ -20,7 +20,7 @@ class GenerationsController < ApplicationController
     if @generation.save
       render json: @generation, status: :created, location: @generation
     else
-      render json: @generation.errors, status: :unprocessable_entity
+      render json: @generation.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class GenerationsController < ApplicationController
     if @generation.update(generation_params)
       render json: @generation
     else
-      render json: @generation.errors, status: :unprocessable_entity
+      render json: @generation.errors.full_messages, status: :unprocessable_entity
     end
   end
 

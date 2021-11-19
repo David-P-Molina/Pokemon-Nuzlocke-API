@@ -20,7 +20,7 @@ class RulesController < ApplicationController
     if @rule.save
       render json: @rule, status: :created, location: @rule
     else
-      render json: @rule.errors, status: :unprocessable_entity
+      render json: @rule.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class RulesController < ApplicationController
     if @rule.update(rule_params)
       render json: @rule
     else
-      render json: @rule.errors, status: :unprocessable_entity
+      render json: @rule.errors.full_messages, status: :unprocessable_entity
     end
   end
 

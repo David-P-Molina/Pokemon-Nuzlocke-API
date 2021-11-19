@@ -20,7 +20,7 @@ class TrainersController < ApplicationController
     if @trainer.save
       render json: @trainer, status: :created, location: @trainer
     else
-      render json: @trainer.errors, status: :unprocessable_entity
+      render json: @trainer.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class TrainersController < ApplicationController
     if @trainer.update(trainer_params)
       render json: @trainer
     else
-      render json: @trainer.errors, status: :unprocessable_entity
+      render json: @trainer.errors.full_messages, status: :unprocessable_entity
     end
   end
 

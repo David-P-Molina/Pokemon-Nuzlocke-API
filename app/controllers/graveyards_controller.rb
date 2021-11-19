@@ -20,7 +20,7 @@ class GraveyardsController < ApplicationController
     if @graveyard.save
       render json: @graveyard, status: :created, location: @graveyard
     else
-      render json: @graveyard.errors, status: :unprocessable_entity
+      render json: @graveyard.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class GraveyardsController < ApplicationController
     if @graveyard.update(graveyard_params)
       render json: @graveyard
     else
-      render json: @graveyard.errors, status: :unprocessable_entity
+      render json: @graveyard.errors.full_messages, status: :unprocessable_entity
     end
   end
 

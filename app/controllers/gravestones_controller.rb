@@ -20,7 +20,7 @@ class GravestonesController < ApplicationController
     if @gravestone.save
       render json: @gravestone, status: :created, location: @gravestone
     else
-      render json: @gravestone.errors, status: :unprocessable_entity
+      render json: @gravestone.errors.full_messages.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class GravestonesController < ApplicationController
     if @gravestone.update(gravestone_params)
       render json: @gravestone
     else
-      render json: @gravestone.errors, status: :unprocessable_entity
+      render json: @gravestone.errors.full_messages.full_messages, status: :unprocessable_entity
     end
   end
 

@@ -20,7 +20,7 @@ class NuzlockesController < ApplicationController
     if @nuzlocke.save
       render json: @nuzlocke, status: :created, location: @nuzlocke
     else
-      render json: @nuzlocke.errors, status: :unprocessable_entity
+      render json: @nuzlocke.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class NuzlockesController < ApplicationController
     if @nuzlocke.update(nuzlocke_params)
       render json: @nuzlocke
     else
-      render json: @nuzlocke.errors, status: :unprocessable_entity
+      render json: @nuzlocke.errors.full_messages, status: :unprocessable_entity
     end
   end
 

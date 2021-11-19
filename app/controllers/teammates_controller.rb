@@ -20,7 +20,7 @@ class TeammatesController < ApplicationController
     if @teammate.save
       render json: @teammate, status: :created, location: @teammate
     else
-      render json: @teammate.errors, status: :unprocessable_entity
+      render json: @teammate.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class TeammatesController < ApplicationController
     if @teammate.update(teammate_params)
       render json: @teammate
     else
-      render json: @teammate.errors, status: :unprocessable_entity
+      render json: @teammate.errors.full_messages, status: :unprocessable_entity
     end
   end
 

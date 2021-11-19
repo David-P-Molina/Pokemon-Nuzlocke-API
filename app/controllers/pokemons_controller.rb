@@ -20,7 +20,7 @@ class PokemonsController < ApplicationController
     if @pokemon.save
       render json: @pokemon, status: :created, location: @pokemon
     else
-      render json: @pokemon.errors, status: :unprocessable_entity
+      render json: @pokemon.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class PokemonsController < ApplicationController
     if @pokemon.update(pokemon_params)
       render json: @pokemon
     else
-      render json: @pokemon.errors, status: :unprocessable_entity
+      render json: @pokemon.errors.full_messages, status: :unprocessable_entity
     end
   end
 
