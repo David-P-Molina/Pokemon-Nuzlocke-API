@@ -5,12 +5,12 @@ class TypesController < ApplicationController
   def index
     @types = Type.all
 
-    render json: @types
+    render json: TypeSerializer.new(@types)
   end
 
   # GET /types/1
   def show
-    render json: @type
+    render json: @type.slice(:name, :double_damage_from, :double_damage_to, :half_damage_from, :half_damage_to, :no_damage_from, :no_damage_to)
   end
 
   # POST /types
@@ -46,6 +46,6 @@ class TypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def type_params
-      params.require(:type).permit(:name, :description, :strong_against, :weak_against, :immue)
+      params.require(:type).permit(:name, :double_damage_from, :double_damage_to, :half_damage_from, :half_damage_to, :no_damage_from, :no_damage_to)
     end
 end
