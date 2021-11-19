@@ -5,12 +5,12 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
 
-    render json: @games
+    render json: GameSerializer.new(@games)
   end
 
   # GET /games/1
   def show
-    render json: @game
+    render json: @game.slice(:name, :release_date, :description, :generation_id)
   end
 
   # POST /games
