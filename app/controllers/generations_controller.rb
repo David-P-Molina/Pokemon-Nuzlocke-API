@@ -5,12 +5,12 @@ class GenerationsController < ApplicationController
   def index
     @generations = Generation.all
 
-    render json: @generations
+    render json: GenerationSerializer.new(@generations)
   end
 
   # GET /generations/1
   def show
-    render json: @generation
+    render json: @generation.slice(:region, :release_date, :games)
   end
 
   # POST /generations
