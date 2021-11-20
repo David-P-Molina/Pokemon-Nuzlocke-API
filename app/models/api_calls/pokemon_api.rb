@@ -1,4 +1,5 @@
 require 'httparty'
+require 'byebug'
 require 'dotenv'
 Dotenv.load
 
@@ -15,5 +16,13 @@ class PokemonAPI
         pokemons_parsed = JSON.parse(self.fetch_pokemons)
         p pokemons_parsed['results']
     end
+    def self.separate_pokemons
+        pokemons_list = self.parse_pokemons
+        pokemons_list.each do |poke|
+            poke_url = poke['url']
+            name = poke['name']
+            byebug
+        end
+    end
 end
-PokemonAPI.parse_pokemons
+PokemonAPI.separate_pokemons
