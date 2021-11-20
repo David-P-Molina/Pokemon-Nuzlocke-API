@@ -16,11 +16,17 @@ class PokemonAPI
         pokemons_parsed = JSON.parse(self.fetch_pokemons)
         p pokemons_parsed['results']
     end
+    def self.fetch_a_pokemon(url)
+        poke_response = HTTParty.get(url)
+        poke_info = JSON.parse(poke_response.body)
+        poke_info
+    end
     def self.separate_pokemons
         pokemons_list = self.parse_pokemons
         pokemons_list.each do |poke|
-            poke_url = poke['url']
+            poke_info = self.fetch_a_pokemon(poke["url"])
             name = poke['name']
+
             byebug
         end
     end
