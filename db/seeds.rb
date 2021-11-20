@@ -8,7 +8,7 @@ kalos = Generation.find_or_create_by(region: 'Kalos', release_date: '')
 alola = Generation.find_or_create_by(region: 'Alola', release_date: '')
 galar = Generation.find_or_create_by(region: 'Galar', release_date: '')
 
-# Types
+# Types specify pokemon id
 normal = Type.find_or_create_by(name: 'Normal',double_damage_from: 'Fighting', double_damage_to: '', half_damage_from: '', half_damage_to: 'Rock, Steel', no_damage_from: 'Ghost', no_damage_to: 'Ghost')
 fighting = Type.find_or_create_by(name: 'Fighting',double_damage_from: 'Flying, Psychic, Fairy', double_damage_to: 'Normal, Rock, Steel, Ice, Dark', half_damage_from: 'Rock, Bug, Dark', half_damage_to: 'Flying, Poison, Bug, Psychic, Fairy', no_damage_from: '', no_damage_to: 'Ghost')
 flying = Type.find_or_create_by(name: 'Flying',double_damage_from: 'Rock, Electric, Ice', double_damage_to: 'Fighting, Bug, Grass', half_damage_from: 'Fighting, Bug, Grass', half_damage_to: 'Rock, Steel, Electric', no_damage_from: 'Ground', no_damage_to: '')
