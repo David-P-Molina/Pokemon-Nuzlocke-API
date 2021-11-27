@@ -10,7 +10,7 @@ class GenerationsController < ApplicationController
 
   # GET /generations/1
   def show
-    render json: @generation.slice(:region, :release_date, :games)
+    render json: @generation.slice(:region, :description, :history, :geography, :games)
   end
 
   # POST /generations
@@ -46,6 +46,6 @@ class GenerationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def generation_params
-      params.require(:generation).permit(:region_name)
+      params.require(:generation).permit(:description, :history, :geography)
     end
 end
