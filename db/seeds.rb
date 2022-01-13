@@ -126,3 +126,14 @@ shield = Game.find_or_create_by(name: 'Shield', platform: 'Nintendo Switch', rel
 brilliant_diamond = Game.find_or_create_by(name: 'Brilliant Diamond', platform: 'Nintendo Switch', release_date: '2021', description: 'Pokémon Brilliant Diamond and Pokémon Shining Pearl are 2021 remakes of the 2006 Nintendo DS role-playing video games Pokémon Diamond and Pearl. The games are part of the eighth generation of the Pokémon video game series and were developed by ILCA and published by Nintendo and The Pokémon Company for the Nintendo Switch. The games were released on 19 November 2021. They were announced as part of the Pokémon 25th Anniversary event, alongside Pokémon Legends: Arceus. They are the first main Pokémon games to be developed by a different company instead of Game Freak.', generation_id: sinnoh.id)
 shining_pearl = Game.find_or_create_by(name: 'Shining Pearl', platform: 'Nintendo Switch', release_date: '2021', description: 'Pokémon Brilliant Diamond and Pokémon Shining Pearl are 2021 remakes of the 2006 Nintendo DS role-playing video games Pokémon Diamond and Pearl. The games are part of the eighth generation of the Pokémon video game series and were developed by ILCA and published by Nintendo and The Pokémon Company for the Nintendo Switch. The games were released on 19 November 2021. They were announced as part of the Pokémon 25th Anniversary event, alongside Pokémon Legends: Arceus. They are the first main Pokémon games to be developed by a different company instead of Game Freak.', generation_id: sinnoh.id)
 legends_arceus = Game.find_or_create_by(name: 'Legends: Arceus', platform: 'Nintendo Switch', release_date: '2022', description: 'Pokémon Legends: Arceus is an upcoming 2022 action role-playing game developed by Game Freak and published by Nintendo and The Pokémon Company for the Nintendo Switch. It is part of the eighth generation of the Pokémon video game series and is set in the same region as Pokémon Diamond and Pearl (2006), Pokémon Platinum (2008) and their remakes. It is scheduled to be released on January 28, 2022. The game was announced as part of the Pokémon 25th Anniversary event alongside Pokémon Brilliant Diamond and Shining Pearl.', generation_id: sinnoh.id)
+
+# Rules = Rule.find_or_create_by(name: '', content: '')
+# Nuzlocke = Nuzlocke.find_or_create_by(name: '', difficulty: '')
+# Pokemon = Pokemon.find_or_create_by(name:'')
+##Sample Seeds
+# User = User.find_or_create_by(email: '', password:)
+# Trainer = Trainer.find_or_create_by(name: '', in_game_id: , )game_id, user_id
+# Teammate = Teammate.find_or_create_by(nickname: '', gender: '', nature: '', location_caught: '', alive: true, notes: '')pokemon_id, trainer_id
+# GraveYard = Graveyard.find_or_create_by() user_id
+# Gravestones = Gravestone.find_or_create_by(level: 3, death: '', notes: "obituary")graveyard_id, teammate_id
+
