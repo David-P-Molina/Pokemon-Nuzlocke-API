@@ -1,4 +1,4 @@
 class GameSerializer
   include JSONAPI::Serializer
-  attributes :name, :release_date, :description, :generation_id
+  attributes :name, :release_date, :description, :generation_id, :platform
 end
